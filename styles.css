@@ -1,40 +1,92 @@
-/*Maak hier jouw CSS!*/
-.gridContainer {
+body, html {
+    height: 100vh;
+}
+
+body {
+    margin: 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(11, 50px);
-    background-color: #2196F3;
-    grid-gap: 10px;
-    padding: 10px;
-    justify-items: stretch;
+    grid-template-rows: repeat(12, 50px);
+    grid-gap: 16px;
+    padding: 16px;
+    grid-template-areas:
+    "header section1 section1"
+    "sidebar section1 section1"
+    "sidebar section1 section1"
+    "sidebar section1 section1"
+    "sidebar section2 section3"
+    "sidebar section2 section3"
+    "sidebar section2 ."
+    "sidebar section2 ."
+    "sidebar section2 ."
+    "footer footer footer";
 }
 
-.gridContainer > div {
-    background-color: rgba(255, 255, 255, 0.8);
-    text-align: center;
-    border: 1px solid red;
+aside,
+header,
+section,
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.gridItem1 {
+aside {
+    grid-area: sidebar;
+    background: #007fff;
+    padding: 0 16px;
 }
 
-.gridItem2 {
-    grid-area: 2/1/11/2;
+header {
+    grid-area: header;
+    background: #007ddd;
 }
 
-.gridItem3 {
-    grid-area: 1/4/5/2;
+section:nth-of-type(1) {
+    grid-area: section1;
+    background: #5e86af;
 }
 
-.gridItem4 {
-    grid-area: 5/3/7/4;
+section:nth-of-type(2) {
+    grid-area: section2;
+    background: #5f86de;
+    order: 1;
 }
 
-.gridItem5 {
-    grid-area: 11/3/5/2;
+section:nth-of-type(3) {
+    grid-area: section3;
+    background: #5e86af;
 }
 
-.gridItem6 {
-    grid-column: 1/4;
-    grid-row: 11;
+main {
+    grid-area: main;
+    background: #007ddd;
+}
+footer {
+    grid-area: footer;
+    background: #5f86de;
+}
+
+@media screen and (max-width: 375px) {
+    body {
+        grid-template-columns: 100%;
+        grid-template-rows: 50px auto  50px  50px  50px  50px  50px;
+        grid-template-areas:
+    "header"
+    "sidebar"
+    "sidebar"
+    "sidebar"
+    "sidebar"
+    "sidebar"
+    "sidebar"
+    "sidebar"
+    "sidebar"
+    "section1"
+    "section3"
+    "section2"
+    "."
+    "."
+    "."
+    "footer";
+    }
 }
