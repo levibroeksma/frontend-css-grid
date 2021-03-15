@@ -1,1 +1,40 @@
 /*Maak hier jouw CSS!*/
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(11, 50px);
+    background-color: #2196F3;
+    grid-gap: 10px;
+    padding: 10px;
+    justify-items: stretch;
+}
+
+.gridContainer > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    border: 1px solid darkblue;
+}
+
+.gridItem1 {
+}
+
+.gridItem2 {
+    grid-area: 2/1/11/2;
+}
+
+.gridItem3 {
+    grid-area: 1/4/5/2;
+}
+
+.gridItem4 {
+    grid-area: 5/3/7/4;
+}
+
+.gridItem5 {
+    grid-area: 11/3/5/2;
+}
+
+.gridItem6 {
+    grid-column: 1/4;
+    grid-row: 11;
+}
