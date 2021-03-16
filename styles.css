@@ -6,23 +6,19 @@ body {
     margin: 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(12, 50px);
+    grid-template-rows: 50px 190px 100px auto 50px;
     grid-gap: 16px;
-    padding: 16px;
+    padding: 0 16px;
     grid-template-areas:
     "header section1 section1"
     "sidebar section1 section1"
-    "sidebar section1 section1"
-    "sidebar section1 section1"
     "sidebar section2 section3"
-    "sidebar section2 section3"
-    "sidebar section2 ."
-    "sidebar section2 ."
-    "sidebar section2 ."
-    "footer footer footer";
+    "sidebar section2 . "
+    "footer footer footer"
+;
 }
 
-aside,
+
 header,
 section,
 footer {
@@ -35,6 +31,10 @@ aside {
     grid-area: sidebar;
     background: #007fff;
     padding: 0 16px;
+}
+
+aside {
+    overflow: scroll;
 }
 
 header {
@@ -67,25 +67,16 @@ footer {
     background: #5f86de;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 576px) {
     body {
         grid-template-columns: 100%;
         grid-template-rows: 50px auto  50px  50px  50px  50px  50px;
         grid-template-areas:
     "header"
     "sidebar"
-    "sidebar"
-    "sidebar"
-    "sidebar"
-    "sidebar"
-    "sidebar"
-    "sidebar"
-    "sidebar"
     "section1"
     "section3"
     "section2"
-    "."
-    "."
     "."
     "footer";
     }
