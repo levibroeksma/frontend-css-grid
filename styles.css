@@ -1,1 +1,79 @@
-/*Maak hier jouw CSS!*/
+body, html {
+    height: 100vh;
+}
+
+body {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 50px 190px 100px auto 50px;
+    grid-gap: 16px;
+    padding: 0 16px;
+    grid-template-areas:
+    "header section1 section1"
+    "sidebar section1 section1"
+    "sidebar section2 section3"
+    "sidebar section2 . "
+    "footer footer footer"
+;
+}
+
+
+header,
+section,
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+aside {
+    grid-area: sidebar;
+    background: #007fff;
+    padding: 0 16px;
+}
+
+aside {
+    overflow: scroll;
+}
+
+header {
+    grid-area: header;
+    background: #007ddd;
+}
+
+section.sect1 {
+    grid-area: section1;
+    background: #5e86af;
+}
+
+section.sect2 {
+    grid-area: section2;
+    background: #5f86de;
+    order: 1;
+}
+
+section.sect3 {
+    grid-area: section3;
+    background: #5e86af;
+}
+
+footer {
+    grid-area: footer;
+    background: #5f86de;
+}
+
+@media screen and (max-width: 576px) {
+    body {
+        grid-template-columns: 100%;
+        grid-template-rows: 50px auto  50px  50px  50px  50px  50px;
+        grid-template-areas:
+    "header"
+    "sidebar"
+    "section1"
+    "section3"
+    "section2"
+    "."
+    "footer";
+    }
+}
